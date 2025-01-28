@@ -164,16 +164,13 @@ nav {
   display: inline-block;
   background: linear-gradient(to right, #3dbff4 50%, #df5270 50%);
   border: none;
-  border-radius: 50px;
-  padding: 10px 20px;
+  border-radius: 9999px;
+  padding: 1rem 2rem;
   color: white;
-  font-size: 18px;
+  font-size: 1.6rem;
   font-weight: bold;
-  /* position: relative; */
   text-align: left;
   cursor: pointer;
-  overflow: hidden;
-  transition: background 0.3s ease;
 }
 
 .features {
@@ -598,13 +595,14 @@ footer .terms {
     justify-content: center;
     gap: 2rem;
     padding: 2rem 0;
+    margin-top: 2rem;
   }
 
   .mobile-nav .mobile-nav-list a:link,
   .mobile-nav .mobile-nav-list a:visited {
     text-decoration: none;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     transition: color 0.3s;
   }
 
