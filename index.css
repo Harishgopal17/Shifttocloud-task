@@ -1,42 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", serif;
-  line-height: 1;
-  font-weight: 400;
-  color: #333;
-  background-color: #f8f9fa;
-}
-
-.container {
-  max-width: 120rem;
-  margin: auto;
-}
-
-.nav_bar {
-  background-color: #0f4f79;
-  color: #f8f9fa;
-  height: 8rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-ul {
-  color: #fff;
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Todhri&display=swap");
 
 * {
@@ -113,6 +74,29 @@ nav {
   text-align: center;
 }
 
+.btn-mobile-nav,
+.btn-mobile-product {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4rem;
+  width: 4 rem;
+  color: #fff;
+}
+
+.close-icon,
+.product-close-icon {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
 /************** Hero Section ***************/
 .hero {
   background: rgb(255, 255, 255);
@@ -136,6 +120,7 @@ nav {
 
 .hero .video-play-icon {
   width: 6rem;
+  cursor: pointer;
 }
 
 .hero p {
@@ -191,24 +176,11 @@ nav {
   transition: background 0.3s ease;
 }
 
-/* .cta .buy-now-btn span {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #df5270;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: bold;
-} */
-
 .features {
   max-width: 100rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   flex-wrap: wrap;
   column-gap: 6rem;
   row-gap: 3rem;
@@ -216,6 +188,7 @@ nav {
 }
 
 .features div {
+  justify-self: start;
   padding: 0 1rem;
   color: #0066cc;
   font-size: 1.6rem;
@@ -265,8 +238,10 @@ nav {
   box-shadow: 1px 1px 1rem rgba(0, 0, 0, 0.1);
   margin-bottom: 0.5rem;
 }
-
-.menu .menu-list {
+.mobile-product-menu {
+  display: none;
+}
+.menu-list {
   max-width: 100rem;
   margin: 0 auto;
   list-style: none;
@@ -276,7 +251,7 @@ nav {
   gap: 3rem;
 }
 
-.menu .menu-list li {
+.menu-list li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,15 +261,15 @@ nav {
   transition: border 0.3s;
 }
 
-.menu .menu-list li:hover {
+.menu-list li:hover {
   border-bottom: 2px solid #0066cc;
 }
 
-.menu .menu-list li.active {
+.menu-list li.active {
   border-bottom: 2px solid #0066cc;
 }
 
-.menu .menu-list span {
+.menu-list span {
   display: block;
   width: 2.4rem;
   height: 2.4rem;
@@ -303,35 +278,35 @@ nav {
   align-self: center;
 }
 
-.menu .menu-list .icon1 {
+.menu-list .icon1 {
   background-position: 0 0.2rem;
 }
 
-.menu .menu-list .icon2 {
+.menu-list .icon2 {
   background-position: 0 -3.1rem;
 }
 
-.menu .menu-list .icon3 {
+.menu-list .icon3 {
   background-position: 0 -6.3rem;
 }
 
-.menu .menu-list .icon4 {
+.menu-list .icon4 {
   background-position: 0 -9.8rem;
 }
 
-.menu .menu-list .icon5 {
+.menu-list .icon5 {
   background-position: 0 -13.5rem;
 }
 
-.menu .menu-list .icon6 {
+.menu-list .icon6 {
   background-position: 0 -16.8rem;
 }
 
-.menu .menu-list .icon7 {
+.menu-list .icon7 {
   background-position: 0 -20.1rem;
 }
 
-.menu .menu-list .icon8 {
+.menu-list .icon8 {
   background-position: 0 -23.7rem;
 }
 
@@ -419,6 +394,7 @@ nav {
   background-image: url("./images/bg-how-does-office365-mailbox-work.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top right;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -526,4 +502,292 @@ footer .terms {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+/************** Responsive Design ***************/
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .nav-list {
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 2.4rem;
+  }
+
+  .features {
+    column-gap: 4rem;
+  }
+
+  .banner1 {
+    background-size: cover;
+    background-position: top left;
+  }
+
+  .banner1 h4 {
+    padding: 2.5rem 0;
+  }
+
+  .content {
+    padding: 2rem 5rem;
+    column-gap: 4rem;
+  }
+
+  .banner2 {
+    background-size: cover;
+    background-position: top right;
+  }
+
+  .banner2-content-container {
+    padding: 3rem;
+  }
+  footer {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .btn-mobile-nav {
+    display: block;
+    z-index: 10;
+  }
+  .nav-list {
+    display: none;
+  }
+
+  header {
+    position: relative;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #0f4f79;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  .nav-open .mobile-nav {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-open .close-icon {
+    display: block;
+  }
+  .nav-open .menu-icon {
+    display: none;
+  }
+
+  .mobile-nav .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .mobile-nav .mobile-nav-list a:link,
+  .mobile-nav .mobile-nav-list a:visited {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4rem;
+    transition: color 0.3s;
+  }
+
+  .mobile-nav .mobile-nav-list button {
+    border: none;
+    background-color: #fff;
+    color: #228be6;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 2rem;
+  }
+
+  .hero .cta {
+    gap: 1.5rem;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .features div {
+    justify-self: start;
+  }
+
+  .menu {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .menu-list {
+    display: none;
+    transition: all 0.5s;
+  }
+
+  .menu-open .menu-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-open .product-close-icon {
+    display: block;
+  }
+  .menu-open .product-menu-icon {
+    display: none;
+  }
+
+  .mobile-product-menu {
+    background-color: #0f4f79;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-product-menu p {
+    font-size: 1.8rem;
+    color: #fff;
+  }
+
+  .btn-mobile-product {
+    display: block;
+    z-index: 10;
+  }
+
+  .banner1 {
+    background-size: cover;
+    background-position: top left;
+  }
+
+  .banner1 h4 {
+    font-size: 2rem;
+    margin-left: 20rem;
+  }
+
+  .banner1 h4 span {
+    font-size: 1.8rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.4rem;
+    margin-top: 4rem;
+  }
+
+  .hero p {
+    font-size: 1.8rem;
+  }
+  .hero p span {
+    font-size: 3rem;
+  }
+
+  .cta button {
+    font-size: 1.4rem;
+    padding: 1.2rem 2rem;
+  }
+
+  .features div {
+    font-size: 1.6rem;
+  }
+
+  .banner1 {
+    background-position: top right;
+    background-size: cover;
+  }
+
+  .banner1 h4 {
+    text-align: center;
+    margin: 0 2rem;
+  }
+
+  .banner2 {
+    background-position: top left;
+  }
+
+  footer .footer-content-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  footer .footer-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.6rem;
+  }
+  .hero p span {
+    font-size: 2rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 2rem;
+  }
+
+  .banner1 h4 {
+    font-size: 2rem;
+    margin-left: 0;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .footer-content-container {
+    gap: 2rem;
+  }
+
+  footer .terms {
+    font-size: 1.2rem;
+    gap: 0.5rem;
+  }
 }
