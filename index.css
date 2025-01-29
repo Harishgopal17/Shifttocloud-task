@@ -324,7 +324,7 @@ nav {
 .banner1 {
   background-image: url("./images/accelerate_img.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -336,8 +336,9 @@ nav {
   font-family: "Noto Serif Todhri", serif;
   font-weight: 500;
   max-width: 80rem;
-  padding: 6rem 0;
+  padding: 5rem 1rem;
   align-content: center;
+  justify-self: center;
   text-align: center;
   margin-left: 20rem;
   color: #08549f;
@@ -529,7 +530,7 @@ footer .terms {
   }
 
   .banner1 h4 {
-    padding: 2.5rem 0;
+    padding: 2.5rem 1rem;
   }
 
   .content {
